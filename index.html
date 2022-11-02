@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pokedex.css">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+                
+    <title>Pokedex-Vue</title>
+</head>
+<body>
+    <div id="app">
+
+        <div class="container background-poke">
+            <div class="title-screen">
+                <h1 class="title">
+                    Pokedex-Vue
+                </h1>
+            </div>
+            <div class="search">
+                <input class="write-pokemon" v-model="text" type="text" >
+                <span class="go" @click="search()">Go!</span>
+                <span class="go" @click="shinychange()">Shiny</span>
+
+            </div>
+                <div class="pokedex">
+                    <div id="pokedex">
+                        <div id="left">
+                          <div id="logo"></div>
+                          <div id="bg_curve1_left"></div>
+                          <div id="bg_curve2_left"></div>
+                          <div id="curve1_left">
+                            <div id="buttonGlass">
+                              <div id="reflect"> </div>
+                            </div>
+                            <div id="miniButtonGlass1"></div>
+                            <div id="miniButtonGlass2"></div>
+                            <div id="miniButtonGlass3"></div>
+                          </div>
+                          <div id="curve2_left">
+                            <div id="junction">
+                              <div id="junction1"></div>
+                              <div id="junction2"></div>
+                            </div>
+                          </div>
+                          <div id="screen">
+                            <div id="topPicture">
+                              <div id="buttontopPicture1"></div>
+                              <div id="buttontopPicture2"></div>
+                            </div>
+                            <div v-show="shinysee == false" id="picture">
+                              <img v-show="sprite" :src="sprite" alt="psykokwak" height="170" />
+
+                            </div>
+                            <div v-show="shinysee" id="picture">
+                                <img v-show="shiny" :src="shiny" alt="psykokwak" height="170" />
+                              </div>
+                            <div id="buttonbottomPicture"></div>
+                            <div id="speakers">
+                              <div class="sp"></div>
+                              <div class="sp"></div>
+                              <div class="sp"></div>
+                              <div class="sp"></div>
+                            </div>
+                          </div>
+                          <div id="bigbluebutton"></div>
+                          <div id="barbutton1"></div>
+                          <div id="barbutton2"></div>
+                          <div id="cross">
+                            <div id="leftcross">
+                              <div id="leftT"></div>
+                            </div>
+                            <div id="topcross">
+                              <div id="upT"></div>
+                            </div>
+                            <div id="rightcross">
+                              <div id="rightT"></div>
+                            </div>
+                            <div id="midcross">
+                              <div id="midCircle"></div>
+                            </div>
+                            <div id="botcross">
+                              <div id="downT"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="right">
+                          <div id="stats">
+                            <strong>Name:</strong> <span v-show="name" > {{name}}</span><br/>
+                            <strong>Type:</strong> <span v-for="(types, index) in type">{{types.type.name.toUpperCase()}} </span><br/>
+                            <strong>N. Pokedex:</strong> <span v-show="npokedex" > {{npokedex}}</span><br/>
+                            <!-- <strong>Height:</strong> 2'072''<br/>
+                            <strong>Weight:</strong> 43.2 lbs.<br/><br/>
+                            <strong>The duck Pokemon</strong><br/>
+                            Uses mysterious powers to perform various attacks. -->
+                          </div>
+                          <div id="blueButtons1">
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                          </div>
+                          <div id="blueButtons2">
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                            <div class="blueButton"></div>
+                          </div>
+                          <div id="miniButtonGlass4"></div>
+                          <div id="miniButtonGlass5"></div>
+                          <div id="barbutton3"></div>
+                          <div id="barbutton4"></div>
+                          <div id="yellowBox1"></div>
+                          <div id="yellowBox2"></div>
+                          <div id="bg_curve1_right"></div>
+                          <div id="bg_curve2_right"></div>
+                          <div id="curve1_right"></div>
+                          <div id="curve2_right"></div>
+                        </div>
+                      </div>
+                </div>
+                <div class="poke-container">
+                    <!-- <span v-for="(pokemon, index) in pokemons">
+                        {{pokemon.name}}
+                    </span> -->
+
+                </div>
+        </div>
+
+    </div>
+    
+    <script src="script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</body>
+</html>

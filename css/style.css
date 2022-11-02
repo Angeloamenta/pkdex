@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.background-poke {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://external-preview.redd.it/nIBSaLdr_qlU5r4x2mv2PxZpu2eXB0y06cQQrxANKco.png?format=pjpg&auto=webp&s=792836e244d692df0fb30bc509826c49fcdaadc9);
+}
+
+.title {
+    font-family: 'Pokemon Solid', sans-serif;
+}
+
+.title-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    color: yellow;
+    font-size: 30px;
+    text-shadow: 4px 4px blue;
+    margin-bottom: 30px;
+}
+
+.write-pokemon {
+    height: 30px;
+    border-radius: 25px;
+    padding-left: 3px;
+}
+
+.go {
+    font-family: 'Pokemon Solid', sans-serif;
+    color: yellow;
+    border: 2px solid blue;
+    background-color: blue;
+    padding: 0px 20px;
+    margin-top: 10px;
+    border-radius: 25px;
+
+}
+
+.go:hover {
+    background-color: yellow;
+    color: blue;
+}
+
+
+
+.search {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
