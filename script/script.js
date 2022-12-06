@@ -12,7 +12,8 @@ var app = new Vue({
       pokemons2: null,
       pika: null,
       shiny:null,
-      shinysee: false
+      shinysee: false,
+      headers: null
 
 
     },
@@ -33,9 +34,35 @@ var app = new Vue({
             console.log(this.pika);
           }).catch((error) => { console.log(error); });
 
+          // , {
+          //   Authorization: '2O3jlUI9BXPZR72RKYBcaDB6eObcjw4Dh1msrbAAkVeJinmZDTFGtm6eHu3aWVJr'
+          // }
+
+         
+          axios.post('https://data.mongodb-api.com/app/data-hthnm/endpoint/data/v1/action/find', {
+  
+  headers: {
+    'content-type': 'application/json',
+    authorization: '2O3jlUI9BXPZR72RKYBcaDB6eObcjw4Dh1msrbAAkVeJinmZDTFGtm6eHu3aWVJr'
+  },
+  body: {
+    "dataSource": "Cluster0",
+    "database": "mean-api",
+    "collection": "test_vehicles",
+    "filter": {}
+  }
+})
+  .then(response => {
+    console.log(response)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+  
 
 
-        
+          
     },
 
     methods: {
